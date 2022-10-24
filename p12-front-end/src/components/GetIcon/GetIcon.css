@@ -1,0 +1,10 @@
+.get-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+  }
