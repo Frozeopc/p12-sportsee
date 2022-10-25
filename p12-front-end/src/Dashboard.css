@@ -3,11 +3,22 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  width: 70%;
+  width: 80%;
 }
 
 .dashboard-data-graph {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.chart-box {
+  border-radius: 10px;
+}
+
+@media (max-width:1025px) {
+  .dashboard-data-container {
+    width: 100%;
+    
+  }
 }

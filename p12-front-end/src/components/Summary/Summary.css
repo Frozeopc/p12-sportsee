@@ -27,3 +27,26 @@
   .small {
     font-size: 0.7rem;
   }
+
+  .icon-fire {
+    background: #fbeaea;
+  }
+
+  .icon-chicken {
+    background: #e9f4fb;
+  }
+
+  .icon-apple {
+    background: #fbf6e5;
+  }
+
+  .icon-burger {
+    background: #fbeaef;
+  }
+
+  @media (max-width:1025px){
+    .summary-icon-container{
+      flex-direction: row;
+      width: 100%;
+    }
+  }

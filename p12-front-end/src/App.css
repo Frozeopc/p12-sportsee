@@ -3,6 +3,8 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .app {
@@ -40,13 +42,6 @@ html {
   padding: 10px;
 }
 
-.dashboard {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-
 
 .dashboard-graph-container {
   display: flex;
@@ -55,6 +50,7 @@ html {
   align-items: center;
   height: 100%;
   padding: 0 2rem;
+  flex-wrap: wrap;
 }
 
 .barChart {

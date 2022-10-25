@@ -48,7 +48,7 @@ function Activity({ activity }) {
           </div>
         </div>
       </div>
-      <div style={{ width: "100%", height: 200 }}>
+      <div className="chart-box" style={{ width: "100%", height: 200 }}>
         <ResponsiveContainer>
           <BarChart data={activity}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />

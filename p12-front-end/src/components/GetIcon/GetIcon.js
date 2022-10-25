@@ -6,7 +6,7 @@ import "./GetIcon.css";
 
 function GetIcon({ icon }) {
   return (
-    <div className="get-icon">
+    <div className={`get-icon icon-${icon}`}>
       <img src={icons[icon]} alt="icon" /> 
     </div>
   );
