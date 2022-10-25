@@ -1,8 +1,10 @@
 import React from "react";
 import {
+  
   ResponsiveContainer,
   RadialBarChart,
   RadialBar,
+  PolarAngleAxis,
   Legend,
 } from "recharts";
 import "./Score.css";
@@ -38,22 +40,33 @@ function Score({ score }) {
           outerRadius={100}
           barSize={8}
           data={value}
-          startAngle={100}
-          endAngle={0}
+          startAngle={180}
+          endAngle={-180}
+          margin={{top:20}}
         >
+          <PolarAngleAxis
+          type="number"
+          domain={[0, 100]}
+          angleAxisId={0}
+          tick={false}
+          />
           <RadialBar
             position="center"
             dataKey="value"
             fill="#ff0000"
             cornerRadius={10}
+            background={{ fill: "#fff" }}
+            
           />
           <Legend
             iconSize={10}
-            layout="vertical"
-            verticalAlign="top"
-            align="center"
-            payload={value}
-            content={<CustomizedLegend />}
+						width={20}
+						height={20}
+						layout='vertical'
+						verticalAlign='top'
+						align="center"
+						payload={value}
+						content={<CustomizedLegend />}
           />
         </RadialBarChart>
       </ResponsiveContainer>

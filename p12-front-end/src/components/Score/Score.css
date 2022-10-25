@@ -2,6 +2,7 @@
     position: relative;
     right: 6rem;
     top: -1rem;
+    font-weight: bold;
   }
   
   .custom-legend {
@@ -16,6 +17,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
+    
   }
   
   .custom-legend span{

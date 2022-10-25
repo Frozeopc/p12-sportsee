@@ -1,5 +1,4 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 import Activity from "./components/Activity/Activity";
 import Session from "./components/Session/Session";
 import Performance from "./components/Performance/Performance";
@@ -27,7 +26,7 @@ function Dashboard({userId}) {
       <Profil user={dataUser?.data?.userInfos} className="dashboard-profil" />
       <div className="dashboard-graph-container">
         <div className="dashboard-data-container">
-          <Activity activity={dataActivity?.data?.sessions} />
+          <Activity activity={dataActivity?.data} />
           <div className="dashboard-data-graph">
             <Session sessions={dataSession?.data} />
             <Performance performance={dataPerformance?.data} />
