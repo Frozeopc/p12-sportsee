@@ -18,10 +18,11 @@ function Performance({ performance }) {
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
+            tickLine={false}
             data={performance}
             tick={{ fill: "white", fontSize: 12, angle: 0 }}
           />
-          <PolarRadiusAxis angle={30} domain={[0, 300]} tick={false} />
+         
           <Radar
             dataKey="value"
             data={performance}

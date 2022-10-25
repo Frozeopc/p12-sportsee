@@ -1,4 +1,17 @@
 .custom-legend-session {
     color: #ffffff;
     width: 10rem;
+    opacity: 0.5;
   }
+
+  .custom-tooltip-session {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    background-color: #fff;
+    
+  }
+
+  

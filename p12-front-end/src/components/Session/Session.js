@@ -19,6 +19,18 @@ const CustomizedLegend = () => {
   );
 };
 
+
+const CustomTooltip = ({ payload, active }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip-session">
+        <p className="desc">{payload[0].value + "min"}</p>
+        
+      </div>
+    );
+  }
+  return null;
+};
 // Dot source: https://recharts.org/en-US/api/Dot 
 const CustomizedKey = ({ cx, cy }) => {
   return (
@@ -37,20 +49,20 @@ function Session({ sessions }) {
           width={730}
           height={250}
           data={sessions}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 20, right: 30, left: 20, bottom:40 }}
         >
-          <Tooltip />
-          <XAxis dataKey="day" tickLine={false} axisLine={false} stroke="#FFFFFF"/>
+          <Tooltip content={<CustomTooltip/>} cursor={{ fill: "#C4C4C4", opacity: "0.5" }} wrapperStyle={{ outline: 'none' }} />
+          <XAxis dataKey="day" tickLine={false} axisLine={false} stroke="#FFFFFF" type="category" tickMargin={40}/>
           <Legend
             iconSize={10}
             width={20}
             height={20}
             layout="vertical"
             verticalAlign="top"
-            align="center"
+            align="left"
             content={<CustomizedLegend />}
           />
-          <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={<CustomizedKey/>}/>
+          <Line type="natural" dataKey="sessionLength" stroke="#FFFFFF" dot={false}  strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     </div>

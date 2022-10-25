@@ -82,7 +82,7 @@ function Activity({ activity }) {
               yAxisId="cl"
             />
             <Tooltip
-              cursor={{ fill: "#C4C4C4", opacity: "0.5" }}
+              cursor={{ fill: "#C4C4C4", opacity: "0.5" }} wrapperStyle={{ outline: 'none' }}
               content={<CustomTooltip />}
               offset={35}
             />
