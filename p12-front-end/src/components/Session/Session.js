@@ -19,21 +19,11 @@ const CustomizedLegend = () => {
   );
 };
 
-const ToolMin = ({ payload, active }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="tooltip">
-        <p className="desc">{payload[0].value + "min"}</p>
-      </div>
-    );
-  }
-  return null;
-};
 // Dot source: https://recharts.org/en-US/api/Dot 
 const CustomizedKey = ({ cx, cy }) => {
   return (
       <g>
-      <Dot r={10} fill='red'cy={cy} cx={cx} opacity='1'/>
+      <Dot r={10} fill='white'cy={cy} cx={cx} opacity='0.5'/>
       <Dot r={4} fill='white'cy={cy} cx={cx}/>
       </g>
   )
@@ -49,8 +39,7 @@ function Session({ sessions }) {
           data={sessions}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          <Tooltip
-           content={<ToolMin />}/>
+          <Tooltip />
           <XAxis dataKey="day" tickLine={false} axisLine={false} stroke="#FFFFFF"/>
           <Legend
             iconSize={10}
@@ -59,7 +48,6 @@ function Session({ sessions }) {
             layout="vertical"
             verticalAlign="top"
             align="center"
-            data={sessions}
             content={<CustomizedLegend />}
           />
           <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={<CustomizedKey/>}/>

@@ -1,28 +1,26 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
-import SideBar from "./components/SideBar/SideBar";
-import Dashboard from "./Dashboard";
-import { QueryClient, QueryClientProvider } from "react-query";
-import "./App.css";
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+
+import Home from "./pages/Home";
+import UserBoard from "./pages/UserBoard";
+import Error from "./pages/Error";
 
 
 
-const queryClient = new QueryClient(); 
+
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <div className="app">
-          <NavBar />
-          <div className="app--content">
-            <SideBar />
-            <Dashboard />
-          </div>
+    <div className="App">
+            <Router>
+               
+                <Routes>
+                   <Route exact path="/" element={<Home />} /> 
+                    <Route path="/user/:userId" element={<UserBoard />} />
+                    <Route path="/*" element={<Error />} />
+                </Routes>
+            </Router>
         </div>
-      </BrowserRouter>
-    </QueryClientProvider>
   );
 }
 

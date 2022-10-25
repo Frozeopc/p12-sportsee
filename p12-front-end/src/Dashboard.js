@@ -15,9 +15,8 @@ import "./Dashboard.css";
 
 
 
-function Dashboard() {
-  const [searchParams]=useSearchParams();
-  const userId = searchParams.get('userId');
+function Dashboard({userId}) {
+  
   const { data: dataUser } = useUser(userId);
   const { data: dataActivity } = useUserActivity(userId);
   const { data: dataSession } = useUserSession(userId);
