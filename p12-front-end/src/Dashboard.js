@@ -20,7 +20,7 @@ function Dashboard({userId}) {
   const { data: dataActivity } = useUserActivity(userId);
   const { data: dataSession } = useUserSession(userId);
   const { data: dataPerformance } = useUserPerformance(userId);
-  
+ 
   return (
     <div className="dashboard">
       <Profil user={dataUser?.data?.userInfos} className="dashboard-profil" />
@@ -30,7 +30,7 @@ function Dashboard({userId}) {
           <div className="dashboard-data-graph">
             <Session sessions={dataSession?.data} />
             <Performance performance={dataPerformance?.data} />
-            <Score score={dataUser?.data} />
+            <Score score={dataUser?.data?.score} />
           </div>
         </div>
         <div>

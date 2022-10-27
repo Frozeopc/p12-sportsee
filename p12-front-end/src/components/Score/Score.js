@@ -28,7 +28,7 @@ const CustomizedLegend = ({ payload }) => {
 };
 
 function Score({ score }) {
-  const scorePercent = score?.score * 100;
+  const scorePercent = score * 100;
   const value = [{ value: scorePercent }];
   return (
     <div className="circleChart chart-box">

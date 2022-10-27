@@ -7,5 +7,18 @@ const getUser = async (userId) => {
 };
 
 export default function useUser(userId) {
-  return useQuery(["user"], () => getUser(userId));
+  return useQuery(["user"], () => getUser(userId), {
+    select: (data) => {
+      const formatedData = {
+        userid: data.data.id,
+        userInfos: data.data.userInfos,
+        score: data.data.score,
+        keyData: data.data.keyData
+      };
+
+      return {
+        data: formatedData,
+      };
+    },
+  })
 }
